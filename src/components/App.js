@@ -1,21 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import CreatePost from '../components/CreatePost'
+import BaseLayout from './BaseLayout'
+import PostList from './PostList'
+import ShowPost from './ShowPost'
+import Home from './Home'
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+
+  state= {
+    posts: []
   }
+
+  _addPosts = (post) => {
+    this.steState({
+      posts: [post, ...this.state.posts]
+    })
+  }
+
+  render = () =>
+      <div className="App">
+        <BrowserRouter>
+          <BaseLayout>
+            <Switch>
+              <Route exact path="/" component={Home}/>
+              <Route  path="/" component={Home}/>
+              <Route  path="/" component={Home}/>
+            </Switch>
+          </BaseLayout>
+        </BrowserRouter>
+      </div>
 }
 
 export default App;
