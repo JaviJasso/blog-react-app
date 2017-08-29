@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import CreatePost from '../components/CreatePost'
+import CreatePost from './CreatePost'
 import BaseLayout from './BaseLayout'
 import PostList from './PostList'
 import ShowPost from './ShowPost'
@@ -16,11 +16,11 @@ class App extends Component {
 
   }
 
-  _addPosts = (post) => {
-    this.setState({
-      posts: [post, ...this.state.posts]
-    })
-  }
+  // _addPosts = (post) => {
+  //   this.setState({
+  //     posts: [post, ...this.state.posts]
+  //   })
+  // }
 
   render = () =>(
       <div className="App">

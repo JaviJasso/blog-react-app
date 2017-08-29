@@ -7,7 +7,7 @@ class BaseLayout extends Component {
       <div>
         <header>
           <nav>
-            <ul>
+            <ul className="navlink">
               <li><NavLink to="/">Home</NavLink></li>
               <li><NavLink to="/CreatePost">Create</NavLink></li>
               <li><NavLink to="/PostList">Show All Posts</NavLink></li>
