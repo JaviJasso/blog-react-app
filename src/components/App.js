@@ -30,6 +30,7 @@ class App extends Component {
               <Route exact path="/" component={Home}/>
               <Route  path="/CreatePost" component={CreatePost}/>
               <Route  path="/PostList" component={PostList}/>
+              <Route  path="/Post/:id" component={ShowPost}/>
             </Switch>
           </BaseLayout>
         </BrowserRouter>

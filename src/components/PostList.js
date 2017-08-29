@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 
+import {Link} from 'react-router-dom'
+
 class PostList extends Component {
 
   constructor(props){
@@ -18,15 +20,24 @@ class PostList extends Component {
   }
 
   render() {
-    return(
-      <div>
-        {this.state.posts.map((post) => (
-          <div className="id_class" key="(post._id)">
-          </div>
-        ))}
-      </div>
-    )
-  }
+   return (
+     <div className="row">
+       {this.state.posts.map((post) => (
+         <div className="col s12 m6" key={post._id}>
+           <div className="card pink lighten-4">
+             <div className="card-content white-text">
+               <span className="card-title"><Link to={`/Post/${post._id}`}>{post.title}</Link></span>
+               <p>{post.blogPost}</p>
+             </div>
+             <div className="card-action">
+               <p>Written by: {post.author}</p>
+             </div>
+           </div>
+         </div>
+       ))}
+     </div>
+   )}
+
 }
 
 export default PostList
