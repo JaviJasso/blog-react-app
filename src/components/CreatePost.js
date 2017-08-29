@@ -19,8 +19,28 @@ class CreatePost extends Component {
   }
 
   _onSubmit = (event) => {
-    event.preventDefault();
-    this.setState({[event.target.name]: event.target.value})
+    event.preventDefault()
+    let blogItem = JSON.stringify(this.state);
+    fetch("https://tiny-lasagna-server.herokuapp.com/collections/blogger/", {
+      method: "POST",
+      body: blogItem,
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(response => {
+      console.log(response, "It worked")
+      this.props.history.push('/posts')
+      response.redirect('/index')
+    }).catch(err => {
+      console.log(err, "Something went wrong");
+    });
+
+    this.setState({
+      author: '',
+      title: '',
+      blogPost: ''}
+    );
   }
 
   render(){

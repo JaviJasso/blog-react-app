@@ -16,7 +16,6 @@ class BaseLayout extends Component {
         </header>
         {this.props.children}
       </div>
-
     );
   }
 }

@@ -16,11 +16,11 @@ class App extends Component {
 
   }
 
-  // _addPosts = (post) => {
-  //   this.setState({
-  //     posts: [post, ...this.state.posts]
-  //   })
-  // }
+  _addPosts = (post) => {
+    this.setState({
+      posts: [post, ...this.state.posts]
+    })
+  }
 
   render = () =>(
       <div className="App">
@@ -28,7 +28,7 @@ class App extends Component {
           <BaseLayout>
             <Switch>
               <Route exact path="/" component={Home}/>
-              <Route  path="/CreatePost" component={CreatePost}/>
+              <Route  path="/CreatePost"  component={CreatePost}/>
               <Route  path="/PostList" component={PostList}/>
               <Route  path="/Post/:id" component={ShowPost}/>
             </Switch>
