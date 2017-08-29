@@ -8,29 +8,33 @@ import Home from './Home'
 
 
 class App extends Component {
+  constructor(props){
+    super(props)
+      this.state= {
+      posts: []
+    }
 
-  state= {
-    posts: []
   }
 
   _addPosts = (post) => {
-    this.steState({
+    this.setState({
       posts: [post, ...this.state.posts]
     })
   }
 
-  render = () =>
+  render = () =>(
       <div className="App">
         <BrowserRouter>
           <BaseLayout>
             <Switch>
               <Route exact path="/" component={Home}/>
-              <Route  path="/" component={Home}/>
-              <Route  path="/" component={Home}/>
+              <Route  path="/CreatePost" component={CreatePost}/>
+              <Route  path="/PostList" component={PostList}/>
             </Switch>
           </BaseLayout>
         </BrowserRouter>
       </div>
+    )
 }
 
 export default App;
